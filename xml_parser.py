@@ -2,12 +2,11 @@
 
 import xml.etree.ElementTree as ET
 
-#file.xml is currently a placeholder
-tree = ET.parse('file.xml')
-#tree = ET.iterparse('file.xml')
+#parsing dataMay-24-2019.xml
+tree = ET.parse('dataMay-24-2019.xml')
 root = tree.getroot()
 
-#for i in root.findall('country/city'):
-#  v = i.get('stuff')
-#  print(v)
-#  root.clear()
+for i in root.findall('record'):
+  value = i.find('city').text
+  print(value)
+  root.clear()
