@@ -11,7 +11,7 @@ city_num = 0
 for record in root.findall('record'):
   value = record.find('city').text
   print(value)
-  cit_num += 1
+  city_num += 1
   root.clear()
   
 print("Total number of cities: {}.".format(city_num))
