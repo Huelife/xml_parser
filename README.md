@@ -5,3 +5,4 @@ Simple XML parser using ElementTree
 2) Download all files.
 3) Run 'xml_parser.py'.
 4) Program will parse 'dataMay-24-2019.xml'.
+5) Program will also write the data to 'information.txt'.
