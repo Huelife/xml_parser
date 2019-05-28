@@ -1,4 +1,4 @@
-#xml_parser_list.py: Simple XML parser writing list
+#xml_parser_list.py: Simple XML parser writing multiple lists
 
 import xml.etree.ElementTree as ET
 
@@ -6,20 +6,20 @@ import xml.etree.ElementTree as ET
 tree = ET.parse('dataMay-27-2019.xml')
 root = tree.getroot()
 
-city_num = 0
-city_value = []
+set_num = 0
+set_value = []
 
 #loops through record to find longitude,latitude,country,city
 for record in root.findall('record'):
   value = [[record.find('longitude').text,record.find('latitude').text,
            record.find('country').text,record.find('city').text]]
   print(value)
-  city_num += 1
-  city_value += value
+  set_num += 1
+  set_value += value
 
 #writing lists to new file and printing number of lists to console
 with open('information.txt','w',encoding="utf-8") as info:
-  for city_value_list in city_value:
-    info.write('{}\n'.format(city_value_list))
+  for set_value_list in set_value:
+    info.write('{}\n'.format(set_value_list))
   
-print("Total number of lists: {}.".format(city_num))
+print("Total number of lists: {}.".format(set_num))
