@@ -14,7 +14,7 @@ for record in root.findall('record'):
   value = record.find('city').text
   print(value)
   city_num += 1
-  city_value += "[" + value + "]"
+  city_value += "[" + value + "]\n"
 
 #write parsed values to information.txt
 with open('information.txt','w') as info:
