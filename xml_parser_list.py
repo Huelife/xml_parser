@@ -16,3 +16,10 @@ for record in root.findall('record'):
   print(value)
   city_num += 1
   city_value += value
+
+#writing lists to new file and printing number of lists to console
+with open('information.txt','w') as info:
+  for city_value_list in city_value:
+    info.write('{}\n'.format(city_value_list))
+  
+print("Total number of lists: {}.".format(city_num))
