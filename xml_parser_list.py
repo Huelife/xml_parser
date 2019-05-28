@@ -18,7 +18,7 @@ for record in root.findall('record'):
   set_value += value
 
 #writing lists to new file and printing number of lists to console
-with open('information.txt','w',encoding="utf-8") as info:
+with open('information_list.txt','w',encoding="utf-8") as info:
   for set_value_list in set_value:
     info.write('{}\n'.format(set_value_list))
   
