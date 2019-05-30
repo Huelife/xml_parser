@@ -7,19 +7,16 @@ tree = ET.parse('dataMay-27-2019.xml')
 root = tree.getroot()
 
 set_num = 0
-set_value = []
-
-#loops through record to find longitude,latitude,country,city
-for record in root.findall('record'):
-  value = [[record.find('longitude').text,record.find('latitude').text,
-           record.find('country').text,record.find('city').text]]
-  print(value)
-  set_num += 1
-  set_value += value
 
 #writing lists to new file and printing number of lists to console
+#loops through record to find longitude,latitude,country,city
 with open('information_list.txt','w',encoding="utf-8") as info:
-  for set_value_list in set_value:
-    info.write('{}\n'.format(set_value_list))
+  for record in root.findall('record'):
+    value = [[record.find('longitude').text,record.find('latitude').text,
+              record.find('country').text,record.find('city').text]]
+    print(value)    #remove print command to increase parsing speed
+    set_num += 1
+    for value_list in value:
+      info.write('{}\n'.format(value_list))
   
 print("Total number of lists: {}.".format(set_num))
