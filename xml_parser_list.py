@@ -16,7 +16,6 @@ with open('information_list.txt','w',encoding="utf-8") as info:
               record.find('country').text,record.find('city').text]]
     print(value)    #remove print command to increase parsing speed
     set_num += 1
-    for value_list in value:
-      info.write('{}\n'.format(value_list))
+    [info.write('{}\n'.format(value_list)) for value_list in value]
   
 print("Total number of lists: {}.".format(set_num))
